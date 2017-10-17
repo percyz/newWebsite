@@ -1,6 +1,5 @@
 # Ignore
 node_modules/
-.meteor/
 
 # Allow
 !.gitignore
