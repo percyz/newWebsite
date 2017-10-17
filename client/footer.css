@@ -1,0 +1,15 @@
+.footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-around;
+  height: 70px;
+}
+
+.footerChild {
+  text-decoration: none;
+  color: black;
+  margin: auto;
+}

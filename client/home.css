@@ -1,0 +1,146 @@
+.topHome {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  padding-bottom: 180px;
+}
+
+.homeContainer {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  flex-direction: column;
+  /*height: 400px;*/
+}
+
+.homeAppStore {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 40px auto auto auto;
+  max-width: 100%;
+  width: 400px;
+  justify-content: space-around;
+}
+
+.appIcons {
+  height: 50px;
+  max-width: 100%;
+}
+
+.homeText {
+  color: white;
+  margin: 0 auto 0 auto;
+}
+
+.midHome {
+  display: flex;
+  margin: -100px auto auto auto;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding-bottom: 80px;
+}
+
+.midHomeContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.midHomeText {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 80px auto auto auto;
+  text-align: center;
+}
+
+.midHomeText p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.homeBox {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  height: 300px;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+}
+
+.homeRewards {
+  margin: 80px auto 20px auto;
+  max-width: 100%;
+}
+
+.homeBox p {
+  margin: 0 auto 0 auto;
+}
+
+.homeCash {
+  margin-top: 110px;
+}
+
+.homeLearnMore {
+  display: flex;
+  border-radius: 5px;
+  height: 45px;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  cursor: pointer;
+  width: 250px;
+  margin: 40px auto 40px auto;
+}
+
+.homeLearnMore:hover {
+  background: #88c040;
+  border-color: white!important;
+  color: white;;
+}
+
+.homeLearnMore p {
+  margin: auto;
+}
+
+.botHome {
+  display: flex;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.homeAppStoreBottom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 40px auto auto auto;
+  max-width: 100%;
+  width: 500px;
+  justify-content: space-around;
+}
+
+.appIconsBottom {
+  height: 60px;
+  max-width: 100%;
+}

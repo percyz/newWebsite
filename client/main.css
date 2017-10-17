@@ -1,1 +1,34 @@
-/* CSS declarations go here */
+/* generic css styles */
+body {
+  display: flex;
+  top: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+#react-root {
+  max-width: 100%;
+  width: 100%;
+}
+
+.main-layout {
+  max-width: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  margin: auto;
+}
+
+.Geia-Rewards {
+  color: white;
+  margin: 0 auto 40px auto;
+}
+
+
+.Geia-Rewards-White {
+  max-width: 100%;
+  margin: 0 auto 10px auto;
+}

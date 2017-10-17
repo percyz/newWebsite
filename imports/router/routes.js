@@ -4,7 +4,7 @@ import React from 'react';
 import {mount} from 'react-mounter';
 import {MainLayout} from '../ui/containers/MainLayout.jsx';
 
-import Home from '../ui/components/home.jsx';
+import Home from '../ui/components/home/home.jsx';
 
 FlowRouter.route('/', {
   action(){
