@@ -1,0 +1,22 @@
+<template name="Admin">
+  {{#if Template.subscriptionsReady}}
+  <div class="admin-content">
+    {{#if administrator}}
+    <h3>Admin stuff</h3>
+    <div class="subnav">
+      <a href="/">Geia</a>
+      <a href="/admin">Admin</a>
+      <a href="/admin/users">Users</a>
+        <a href="/admin/list">UserList</a>
+    </div>
+    {{else}}
+     
+      <form class="checkAdmin">
+        <input type="email" id="adminEmail"/>
+        <input type="password" id="adminPassword"/>
+         <button id="userbutton">Submit</button>
+      </form>
+    {{/if}}
+</div>
+{{/if}}
+</template>

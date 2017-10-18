@@ -11,6 +11,53 @@ import ContactUs from '../ui/components/contactUs/contactUs.jsx';
 import TermsConditions from '../ui/components/termsConditions/termsConditions.jsx';
 import Download from '../ui/components/download/download.jsx';
 
+
+/** Admin pages **/
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import '../ui/pages/admin.js';
+import '../ui/pages/geia.js';
+import '../ui/pages/admin/users.js';
+import '../ui/pages/admin/list.js';
+
+/** Start of admin **/
+
+var adminRoutes = FlowRouter.group({
+  prefix: '/admin',
+  name: 'admin'
+});
+
+adminRoutes.route('/', {
+  action: function() {
+    BlazeLayout.render('Admin', {
+      main: 'Admin',
+      links: "Links",
+      logo: "BetaLogo"
+    });
+  }
+});
+
+adminRoutes.route('/users', {
+  action: function() {
+    BlazeLayout.render('Users', {
+      main: 'Users',
+      links: "Links",
+      logo: "BetaLogo"
+    });
+  }
+});
+
+adminRoutes.route('/list', {
+  action: function() {
+    BlazeLayout.render('List', {
+      main: 'List',
+      links: "Links",
+      logo: "BetaLogo"
+    });
+  }
+});
+
+/** End of admin **/
+
 FlowRouter.route('/', {
   action(){
     mount(MainLayout, {
