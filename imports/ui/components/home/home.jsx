@@ -22,6 +22,7 @@ export default class Home extends React.Component {
               <img className='appIcons' src='Apple.png'/>
             </div>
           </div>
+
           <div className='midHome' style={{width: GLOBAL.WEB.DESKTOP}}>
             <div className='midHomeContainer'>
               <div className='homeBox'>
@@ -38,18 +39,22 @@ export default class Home extends React.Component {
                 <p style={{fontSize: GLOBAL.FONT.MEDIUM}}>Win Cash</p>
               </div>
             </div>
+
             <div className='midHomeText'>
-              <p style={{fontSize: GLOBAL.FONT.BIG}}>Pretty easy right?</p>
-              <p style={{fontSize: GLOBAL.FONT.BIG}}>Whats the catch you ask?</p>
+              <p style={{fontSize: GLOBAL.FONT.BIG}}>Pretty easy.</p>
+              <p style={{fontSize: GLOBAL.FONT.BIG}}>What&apos;s the catch you ask?</p>
               <p style={{fontSize: GLOBAL.FONT.BIG}}>Well, you make the world a better place.</p>
               <p style={{fontSize: GLOBAL.FONT.SMALL}}>And we think that&apos;s a pretty good catch.</p>
+              <a href='/aboutus' style={{textDecoration:'none'}}>
               <div className='homeLearnMore' style={{fontSize: GLOBAL.FONT.MEDIUM,
                   borderColor: GLOBAL.COLOR.GREEN, borderStyle: 'solid'}}>
                 <p>Learn More</p>
               </div>
+              </a>
               <p style={{fontSize: GLOBAL.FONT.BIG}}>Or</p>
+            </div>
           </div>
-          </div>
+
           <div className='botHome' style={{backgroundColor: GLOBAL.COLOR.GREEN}}>
             <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Download the App now</p>
             <div className='homeAppStoreBottom'>

@@ -1,0 +1,71 @@
+
+.topAbout {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-bottom: 180px;
+}
+
+.midAbout {
+  display: flex;
+  margin: -150px auto auto auto;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding-bottom: 80px;
+}
+
+.midAboutContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%;
+}
+
+.aboutBox {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 1080px;
+  background-color: white;
+  border-radius: 30px;
+  height: auto;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+}
+
+.aboutBoxLeft {
+  display: flex;
+  align-items: flex-start;
+  margin: auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 1080px;
+  background-color: white;
+  border-radius: 30px;
+  height: auto;
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25);
+}
+
+.aboutParagraph {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.aboutParagraph li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

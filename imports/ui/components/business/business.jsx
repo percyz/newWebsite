@@ -37,10 +37,12 @@ export default class Business extends React.Component {
             <div className='midHomeText'>
                 <p style={{fontSize: GLOBAL.FONT.BIG}}>What would you do with more customers</p>
                 <p style={{fontSize: GLOBAL.FONT.BIG}}>and lower energy bills?</p>
+                <a href='/aboutus' style={{textDecoration:'none'}}>
                 <div className='homeLearnMore' style={{fontSize: GLOBAL.FONT.MEDIUM,
                   borderColor: GLOBAL.COLOR.GREEN, borderStyle: 'solid'}}>
                 <p>Learn More</p>
-              </div>
+                </div>
+                </a>
           </div>
           </div>
           <div className='botHome' style={{backgroundColor: GLOBAL.COLOR.GREEN}}>
