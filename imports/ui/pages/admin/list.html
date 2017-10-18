@@ -1,0 +1,113 @@
+<template name="List">
+  {{#if Template.subscriptionsReady}}
+  {{#if administrator}}
+  <!--<div class="admin-content">
+    <div class="navPush"></div>//-->
+    <div class="subnav">
+      <a href="/">Geia</a>
+      <a href="/admin">Admin</a>
+      <a href="/admin/users">Users</a>
+        <a href="/admin/list">UserList</a>
+    </div>
+    <div class="users">
+      <div class="create">
+        <div class="head"><h2>UsersLists</h2></div>
+        {{#each user in list}}
+          <div class="userlist">
+              <p class="usertext">{{ user.profile.name }}</p><span class="userspan"></span>
+              <p class="usertext">  {{ user.emails.[0].address }}</p><span class="userspan"></span>
+              <p class="usertext">  {{ user.profile.phone }}</p><span class="userspan"></span>
+              <p class="usertext">  {{ user.profile.org }}</p>
+              <p class="usertext"> {{ user.profile.ownOrg }} </p>
+          </div>
+        {{/each}}
+
+        <!--select id="business">
+          <option value="false">Consumer</option>
+          <option value="true" selected>Organisation</option>
+        </select>
+        {{#if administrator}}
+          <select id="role">
+            <option value="geia-basic" selected>Basic</option>
+            <option value="geia-staff">Staff</option>
+            <option value="geia-su">Admin</option>
+          </select>
+        {{else}}
+          <div class="fixed">Basic</div>
+          <input type="hidden" value="geia-basic" />
+        {{/if}}-->
+      </div>
+        <!--
+      <div class="list">
+        <div class="head">Active User Accounts</div>
+        <div class="error">{{ errorList }}</div>
+        <div class="success">{{ successList }}</div>
+        {{#each user in users}}
+          <div class="item" id="{{ user._id }}">
+            <div class="field" id="firstName" contenteditable="true">{{ user.profile.name }}</div>
+            <div class="field" id="email" contenteditable="true">{{ user.emails.[0].address }}</div>
+            <div class="field" id="phone" contenteditable="true">{{ user.profile.phone }}</div>
+            select id="business">
+              {{#if user.profile.business}}
+                <option value="false">Consumer</option>
+                <option value="true" selected>Organisation</option>
+              {{else}}
+                <option value="false" selected>Consumer</option>
+                <option value="true">Organisation</option>
+              {{/if}}
+            </select
+            {{#if administrator}}
+              <select id="role">
+                {{#if (role user 'geia-basic')}}
+                  <option value="geia-basic" selected>Basic</option>
+                  <option value="geia-staff">Staff</option>
+                  <option value="geia-su">Admin</option>
+                {{/if}}
+                {{#if (role user 'geia-staff')}}
+                  <option value="geia-basic">Basic</option>
+                  <option value="geia-staff" selected>Staff</option>
+                  <option value="geia-su">Admin</option>
+                {{/if}}
+                {{#if (role user 'geia-su')}}
+                  <option value="geia-basic">Basic</option>
+                  <option value="geia-staff">Staff</option>
+                  <option value="geia-su" selected>Admin</option>
+                {{/if}}
+              </select>
+            {{else}}
+              {{#if (role user 'geia-basic')}}
+                <div class="fixed">Basic</div>
+                <input type="hidden" value="geia-basic" />
+              {{/if}}
+              {{#if (role user 'geia-staff')}}
+                <div class="fixed">Staff</div>
+                <input type="hidden" value="geia-staff" />
+              {{/if}}
+              {{#if (role user 'geia-su')}}
+                <div class="fixed">Admin</div>
+                <input type="hidden" value="geia-su" />
+              {{/if}}
+            {{/if}}
+            <div class="button"></div>
+          </div>
+        {{/each}}
+      </div>-->
+    </div>
+    <!--<ul class="adminusers">
+      {{#each user in users}}
+      <li>
+      <a href="/admin/users/{{user._id}}">{{user.profile.firstName}}  {{user.profile.lastName}}</a>
+      </li>
+      <li>
+        <ul>
+          {{#each email in user.emails}}
+          <li>{{email.address}}</li>
+          {{/each}}
+        </ul>
+      </li>
+      {{/each}}
+    </ul>
+  </div>//-->
+  {{/if}}
+  {{/if}}
+</template>
