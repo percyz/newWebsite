@@ -23,6 +23,16 @@ Template.Users.onCreated(() => {
 });
 
 Template.Users.events({
+  'submit .logoutAdmin'(event){
+    event.preventDefault();
+    Meteor.logout((er) => {
+            if (er) {
+                //alert("Error logging out");
+            } else {
+                FlowRouter.go('/');
+            }
+        });
+  },
   'submit .updateuser'(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -108,7 +118,10 @@ Template.Users.events({
   },
   'submit .checkWinner'(event){
       event.preventDefault();
-      Meteor.call('checkWinner',( error,response ) => {
+      var input = event.target.checkInput.value;
+      input = Number(input);
+      console.log("input client is :", input);
+      Meteor.call('checkWinner',input,( error,response ) => {
         if ( error ) {
             alert( error.reason );
         }else {
@@ -120,7 +133,7 @@ Template.Users.events({
             }
             
             console.log("user is :",list);*/
-            Bert.alert( "The new winner is "+response+" you should get an email now", 'success' );
+            Bert.alert( "The winners have been selected, you should get an email now", 'success' );
             
         }
       })

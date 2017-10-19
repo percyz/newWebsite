@@ -23,6 +23,52 @@ Template.List.onCreated(() => {
 });
 
 Template.List.events({
+  'submit .updateorg'(event) {
+    event.preventDefault();
+    var orgid = event.target.orgid.value;
+    var orgname = event.target.orgname.value;
+    //var orgvalidated = event.target.orgvalidated.value;
+    //var orgstate = event.target.orgstate.value;
+   // var orgauthstatus = event.target.orgauthstatus.value;
+   // var orgstars = event.target.orgstars.value;
+    var orgcurscore = event.target.orgcurscore.value;
+    //var orgnewscore = event.target.orgnewscore.value;
+    var orgrewards = event.target.orgrewards.value;
+
+    Meteor.call('admineditorg',orgid,orgname,orgrewards,orgcurscore, ( error ) => {
+        if ( error ) {
+            alert( error.reason );
+        }else {
+            Bert.alert( "Change was successfull on " + orgname, 'success' );
+            //console.log("Should of worked??")
+        }
+    });
+  },
+  'submit .logoutAdmin'(event){
+    event.preventDefault();
+    Meteor.logout((er) => {
+            if (er) {
+                //alert("Error logging out");
+            } else {
+                FlowRouter.go('/');
+            }
+        });
+  },
+  'click .helpBlue'(event){
+    Bert.alert( "Blue tick takes `true or false` sets the validated tick. If you type false and it says change is successful, it will show blank", 'info' );
+  },
+  'click .helpLead'(event){
+    Bert.alert( "Takes `true or false` puts them on Leaderboard. If you type false and it says change is successful, it will show blank", 'info' );
+  },
+  'click .helpcvs'(event){
+    Bert.alert( "Takes `champ or valid or self` (champion/validated/self-validated)", 'info' );
+  },
+  'click .helpstars'(event){
+    Bert.alert( "Takes `1 or 2 or 3` amount of stars for a listing", 'info' );
+  },
+  'click .helpcurs'(event){
+    Bert.alert( "Current score is what is shown, and New score is from an assessment which doesn't get shown unless you copy the `New Score` and put it in Current Score (Updates the listing)", 'info' );
+  }
 });
 
 Template.List.helpers({
@@ -53,8 +99,10 @@ Template.List.helpers({
     }
   },
 
-  list() {
-    return Meteor.users.find({});
+  orgs(){
+    //if (Template.instance().subscriptionsReady()) {
+      return Organisations.find({});
+    //}
   },
   role(user, role) {
     if (user.roles != undefined) {

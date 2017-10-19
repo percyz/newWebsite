@@ -17,8 +17,8 @@ Template.Admin.onCreated( () => {
       if(error){
         setTimeout("window.location.href='/'",0);
       }else if(result){
-        Template.instance().subscribe('allsecrets');
-        Template.instance().subscribe('listsecrets');
+        //Template.instance().subscribe('allsecrets');
+        //Template.instance().subscribe('listsecrets');
         setTimeout("window.location.href='/admin/user'",0);
       }else {
         setTimeout("window.location.href='/'",0);
@@ -78,21 +78,39 @@ Template.Admin.events({
                 //console.log("CALLING SIGNIN");
                 var newUser = Meteor.users.findOne({ _id: Meteor.userId() });
                 console.log('newUser is :',newUser)
-                Meteor.call('signIn', newUser, function (error) {
+                Meteor.call('checkAdminTwice', newUser, function (error, result) {
                     // identify the error
                     if (error) {
-                        
+                        return ( setTimeout("window.location.href='/admin/users'",0) );
+                        Meteor.logout((er) => {
+                            if (er) {
+                                //alert("Error logging out");
+                            } else {
+                                FlowRouter.go('/');
+                            }
+                        });
                         // show a nice error message
                         
-                    } else {
-                      Meteor.call('checkAdminTwice',newUser, function(error) {
+                    } if(result == true){
+                      Meteor.call('signIn',newUser, function(error) {
                         if(error){
 
                         }else {
                           console.log('passssed')
+                          setTimeout("window.location.href='/admin/users'",0);
                         }
                       })
                       
+                    }else {
+                      console.log('else called')
+                      Meteor.logout((er) => {
+                            if (er) {
+                                //alert("Error logging out");
+                            } else {
+                                FlowRouter.go('/');
+                            }
+                        });
+                       setTimeout("window.location.href='/admin/users'",0);
                     }
                 });
             }

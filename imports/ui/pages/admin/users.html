@@ -4,38 +4,51 @@
   <!--<div class="admin-content">
     <div class="navPush"></div>//-->
     <div class="subnav">
-      <a href="/">Geia</a>
-      <a href="/admin">Admin</a>
+      <a href="/">Home</a>
       <a href="/admin/users">Users</a>
-        <a href="/admin/list">UserList</a>
+        <a href="/admin/list">Business</a>
     </div>
+    <form class='logoutAdmin'>
+      <button>Logout</button>
+    </form>
     <div class="users">
       <div class="create">
         <div class="head"><h2>Users</h2></div>
         <div class="error">{{ errorCreate }}</div>
         <div class="success">{{ successCreate }}</div>
+
+        <div class="usertitle">
+          <p id="putID">First and last name</p>
+          <p id="putO">Email</p>
+          <p id="putB">Number</p>
+          <p id="putL">App type</p>
+          <p id="putstatus">Points</p>
+
+        </div>
         {{#each user in users}}
           <div class="userlist">
             <form class="updateuser">
-            <input id="id" value={{ user._id }}>
+            <!--<input id="id" value={{ user._id }}>-->
             <input id="name" value={{ user.profile.name }}>
             <input id="email" value={{ user.emails.[0].address }}>
             <input id="phone" value={{ user.profile.phone }}>
-            <input id="org" value={{ user.profile.org }}>
-            <input id="org" value={{ user.profile.ownOrg }}>
+            <input id="phone" value={{ user.profile.appType }}>
+            <!--<input id="org" value={{ user.profile.org }}>-->
+            <!--<input id="org" value={{ user.profile.ownOrg }}>-->
+            <input id="org" value={{ user.profile.points }}>
             <!--for(i = 0; i < user.profile.organisation[0].length; i++){
               user.profile.organisation[0][i][1]-->
-            <select id="business">
+           <!--<select id="business">
               {{#each curorg in user.profile.organisation}}
                 <option value="#">{{ [curorg] [1] }}</option>
               {{/each}}
-            </select>
+            </select>-->
             <button id="userbutton">Submit</button>
           </form>
           </div>
         {{/each}}
         <hr>
-        <h2>Organisations</h2>
+        <!--<h2>Organisations</h2>
         <div class="instruction">
           <p id="putID">Org ID</p>
           <p id="putO">Org name</p>
@@ -77,13 +90,14 @@
                 <button id="onLeader">AssessEmail</button>
               </form>
             </div>
-          {{/each}}
-          <form class="removeUse">
+          {{/each}}-->
+          <!--<form class="removeUse">
             <button id="removeuser">Clear users' points</button>
           </form>
-          <br/>
+          <br/>-->
           <form class="checkWinner">
             <button id="checkwin">Check the winner</button>
+              <input id="checkInput" placeholder="Enter the amount of winners" />
           </form>
           
         <!--select id="business">
