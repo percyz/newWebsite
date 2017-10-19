@@ -74,7 +74,7 @@ FlowRouter.route('/business', {
   }
 });
 
-FlowRouter.route('/aboutus', {
+FlowRouter.route('/about', {
   action(){
     mount(MainLayout, {
       content: (<AboutUs />)

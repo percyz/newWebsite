@@ -18,8 +18,12 @@ export default class Home extends React.Component {
             <p className='homeText' style={{fontSize: GLOBAL.FONT.BIG}}>Win cash while saving the planet?</p>
             <p className='homeText' style={{fontSize: GLOBAL.FONT.BIG}}>Sure thing.</p>
             <div className='homeAppStore'>
+              <a href='https://play.google.com/store/apps/details?id=com.geiaapp'>
               <img className='appIcons' src='Google.png'/>
+              </a>
+              <a href='https://itunes.apple.com/us/app/geia/id1293126369?ls=1&mt=8'>
               <img className='appIcons' src='Apple.png'/>
+              </a>
             </div>
           </div>
 
@@ -45,7 +49,7 @@ export default class Home extends React.Component {
               <p style={{fontSize: GLOBAL.FONT.BIG}}>What&apos;s the catch you ask?</p>
               <p style={{fontSize: GLOBAL.FONT.BIG}}>Well, you make the world a better place.</p>
               <p style={{fontSize: GLOBAL.FONT.SMALL}}>And we think that&apos;s a pretty good catch.</p>
-              <a href='/aboutus' style={{textDecoration:'none'}}>
+              <a href='/about' style={{textDecoration:'none'}}>
               <div className='homeLearnMore' style={{fontSize: GLOBAL.FONT.MEDIUM,
                   borderColor: GLOBAL.COLOR.GREEN, borderStyle: 'solid'}}>
                 <p>Learn More</p>
@@ -58,8 +62,12 @@ export default class Home extends React.Component {
           <div className='botHome' style={{backgroundColor: GLOBAL.COLOR.GREEN}}>
             <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Download the App now</p>
             <div className='homeAppStoreBottom'>
+              <a href='https://play.google.com/store/apps/details?id=com.geiaapp'>
               <img className='appIconsBottom' src='Google.png'/>
+              </a>
+              <a href='https://itunes.apple.com/us/app/geia/id1293126369?ls=1&mt=8'>
               <img className='appIconsBottom' src='Apple.png'/>
+              </a>
             </div>
         </div>
         </div>

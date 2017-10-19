@@ -1,3 +1,36 @@
 .businessCustomers {
   margin-top: 100px!important;
 }
+
+.businessBot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  width: 100%;
+  max-width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.businessEmailContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.businessEmailButton {
+  width: 100px;
+  height: 28px;
+  border-radius: 6px;
+  border-color: 'white';
+  border-width: thin;
+}
+
+.businessEmailCheck {
+  padding-left: 20px;
+}

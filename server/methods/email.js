@@ -34,7 +34,7 @@ Accounts.emailTemplates.resetPassword.text = function (user, url) {
     var newUrl = Meteor.absoluteUrl('reset/' + token);
     newUrl = url.slice(30);
     geiaUrl = "https://www.geia.nz";
-    newUrl = geiaUrl + newUrl; 
+    newUrl = geiaUrl + newUrl;
     //console.log("newUrl is :", newUrl);
     var str = 'Hello,\n';
     str += 'To reset your password, please click follow link...\n';
@@ -53,6 +53,7 @@ Accounts.emailTemplates.resetPassword.text = function (user, url) {
 // In your server code: define a method that the client can call
 Meteor.methods({
     sendEmail: function (to, from, subject, text) {
+      console.log("#############",typeof to,typeof from,typeof subject,typeof text)
         check([to, from, subject, text], [String]);
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
