@@ -3,9 +3,74 @@ import { Link } from 'react-router';
 import GLOBAL from '../../../global.js';
 
 
-var highlightStyle = {"backgroundColor": "white","fontWeight":"bolder","fontSize":"120%"}
+var highlightStyle = {"backgroundColor": "white","fontWeight":"bolder","fontSize":"120%"};
+var flagemail = true;
 
 export default class Business extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      emailCheck: true,
+    }
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    console.log('e is :',e)
+    e.preventDefault();
+    this.setState({email: e.target.value});
+  }
+
+  onSubmit() {
+    //var ele = $(e.target);
+    //e.preventDefault()
+    console.log("this.state.email--:", this.state.email, flagemail, this.state.emailCheck);
+    var email = this.state.email;
+    console.log("email:", email);
+    var pattern =/^[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
+
+    if( !pattern.test( email ) ) {
+      console.log("emailcheck: ", this.state.emailCheck);
+      this.setState({emailCheck: false});
+      /*
+        $( "#emailError" )
+            .text( "Please enter a valid email." )
+            .show()
+            .fadeOut( 5000 );
+      */
+        flagemail = true;
+        //event.preventDefault();
+        return;
+    } else {
+      this.setState({emailCheck: true});
+        flagemail = false;
+    };
+
+    console.log("flagemail:", flagemail);
+
+    if(!flagemail) {
+      console.log("good email");
+      Meteor.call(
+        'sendEmail',
+        'hello@geia.nz',
+        email,
+        email + 'is interested in Geia',
+        email + 'has contacted us', (error, response) => {
+          if ( error ) {
+              Bert.alert( error.reason, 'danger' );
+          } else {
+              Bert.alert( "Email sent!",'success' );
+          }
+        }
+      );
+    }else{
+      console.log("invalid email");
+    }
+
+  }
 
   render() {
 
@@ -37,15 +102,38 @@ export default class Business extends React.Component {
             <div className='midHomeText'>
                 <p style={{fontSize: GLOBAL.FONT.BIG}}>What would you do with more customers</p>
                 <p style={{fontSize: GLOBAL.FONT.BIG}}>and lower energy bills?</p>
+                <a href='/about' style={{textDecoration:'none'}}>
                 <div className='homeLearnMore' style={{fontSize: GLOBAL.FONT.MEDIUM,
                   borderColor: GLOBAL.COLOR.GREEN, borderStyle: 'solid'}}>
                 <p>Learn More</p>
-              </div>
+                </div>
+                </a>
           </div>
           </div>
-          <div className='botHome' style={{backgroundColor: GLOBAL.COLOR.GREEN}}>
-            <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Interested? Drop us a line.</p>
-            <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Thank&apos;s we&apos;ll be in touch.</p>
+          <div className='businessBot' style={{backgroundColor: GLOBAL.COLOR.GREEN}}>
+            <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white'}}>Interested? Drop us a line.</p>
+
+              <div className='businessEmailContainer' >
+                <input
+                  style={{width:'230px', height:'20px', borderRadius:'6px'}}
+                  type='text'
+                  className='businessInput'
+                  onChange={this.handleChange}
+                  placeholder="  Your email"
+                />
+              <div style={{paddingLeft:'20px'}}>
+              <button className='businessEmailButton'
+                style={{ backgroundColor:'#88c040', color:'white', borderColor: 'white'}}
+                onClick={this.onSubmit} >
+                Submit
+              </button>
+            </div>
+
+              {this.state.emailCheck? null : <span style={{color:'red'}} className = "businessEmailCheck">Invalid email!</span> }
+
+            </div>
+
+          <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Thank&apos;s we&apos;ll be in touch.</p>
         </div>
         </div>
       </div>
