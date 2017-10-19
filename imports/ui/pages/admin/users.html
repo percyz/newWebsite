@@ -23,19 +23,18 @@
           <p id="putB">Number</p>
           <p id="putL">App type</p>
           <p id="putstatus">Points</p>
-
         </div>
         {{#each user in users}}
           <div class="userlist">
             <form class="updateuser">
-            <!--<input id="id" value={{ user._id }}>-->
+            <input id="id" value={{ user._id }}>
             <input id="name" value={{ user.profile.name }}>
             <input id="email" value={{ user.emails.[0].address }}>
             <input id="phone" value={{ user.profile.phone }}>
-            <input id="phone" value={{ user.profile.appType }}>
+            <input id="appType" value={{ user.profile.appType }}>
             <!--<input id="org" value={{ user.profile.org }}>-->
             <!--<input id="org" value={{ user.profile.ownOrg }}>-->
-            <input id="org" value={{ user.profile.points }}>
+            <input id="points" value={{ user.profile.points }}>
             <!--for(i = 0; i < user.profile.organisation[0].length; i++){
               user.profile.organisation[0][i][1]-->
            <!--<select id="business">

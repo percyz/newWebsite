@@ -40,12 +40,11 @@ Template.Users.events({
     var email = event.target.email.value;
     var phone = event.target.phone.value;
     var id = event.target.id.value;
-    console.log("Users ID is :",id);
-    console.log("updateuser text target is :",name);
-    console.log("updateuser text target is :",email);
-    console.log("updateuser text target is :",phone);
+    var appType = event.target.appType.value;
+    var points = event.target.points.value;
+    console.log("Users ID is :",appType);
 
-    Meteor.call('adminedituser',id,email,name,phone, ( error ) => {
+    Meteor.call('adminedituser',id,email,name,phone,points,appType, ( error ) => {
         if ( error ) {
             alert( error.reason );
         }else {

@@ -49,8 +49,8 @@ Meteor.methods({
       Accounts._insertLoginToken(user._id, stampedLoginToken);
   },
 
-    adminedituser: function(id,emailAddress,firstName,userPhone,points){
-      console.log("i think its 3!");
+    adminedituser: function(id,emailAddress,firstName,userPhone,points,appType){
+      console.log("i think its 3!",appType);
       if (!this.userId) {
         console.log("adminedituser is cancelled");
         return this.ready();
@@ -64,27 +64,6 @@ Meteor.methods({
       console.log("admin edit user is called");
       points = Number(points);
       Meteor.users.update({_id:id},
-
-      /*
-      {$set:{
-          "emails": {
-          "address": emailAddress
-          },
-          "profile": {
-              "name": firstName,
-              "phone": userPhone
-           }
-      }}*/
-      /*{$set:{
-          emails: [{
-          address: emailAddress,
-          verified: true,
-        }],
-          profile: {
-              name: firstName,
-              phone: userPhone
-           }
-      }}*/
       {$set:{
           emails: [{
           address: emailAddress,
@@ -92,7 +71,8 @@ Meteor.methods({
         }],
           "profile.name": firstName,
           "profile.phone": userPhone,
-          "profile.points": points
+          "profile.points": points,
+          "profile.appType": appType
 
       }}
     );

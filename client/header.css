@@ -16,6 +16,8 @@
   flex-basis: 300px;
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .headerTags a {
@@ -47,6 +49,7 @@
   flex-wrap: wrap;
   max-width: 800px;
   width: 100%;
+  margin-left: 20px;
   justify-content: space-between;
 }
 
@@ -61,6 +64,10 @@
 }
 
 #orgid {
+  width: 10px;
+}
+
+.updateuser #id {
   width: 10px;
 }
 

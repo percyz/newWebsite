@@ -11,7 +11,9 @@ export default class Header extends React.Component {
             <div className='headerContent'>
               <div className='headerWhiteSpace'></div>
               <div className='headerTags'>
-                <img className='headerChild' id='geia-green-logo' src='Geia-Green.png'/>
+                <a href="/">
+                  <img className='headerChild' id='geia-green-logo' src='Geia-Green.png'/>
+                </a>
                 <a className='headerChild' href='/'>Download</a>
                 <a className='headerChild' href='/business'>Business</a>
               </div>
