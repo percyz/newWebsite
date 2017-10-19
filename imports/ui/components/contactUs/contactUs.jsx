@@ -9,6 +9,10 @@ const Marker = () => <img src='Location.png' width={50} height={50}/>
 
 export default class ContactUs extends React.Component {
 
+  componentDidMount () {
+    window.scrollTo(0, 0)
+  }
+
   render() {
 
     return (

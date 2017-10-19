@@ -1,3 +1,16 @@
+/* Font for all */
+
+@font-face {
+    font-family: BPfont;
+    src: url(BPreplay.otf);
+}
+
+* {
+  font-family: BPfont!important;
+}
+
+/* End of font for all */
+
 
 .headerContent {
   flex-basis: 100%;
@@ -39,6 +52,15 @@
 
 #geia-green-logo {
   height: 50px;
+}
+
+@media(max-width: 900px){
+  .headerWhiteSpace {
+    display: none;
+  }
+  .headerTags {
+    margin: auto;
+  }
 }
 
 /* Admin page */

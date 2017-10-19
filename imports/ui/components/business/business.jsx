@@ -24,6 +24,10 @@ export default class Business extends React.Component {
     this.setState({email: e.target.value});
   }
 
+  componentDidMount () {
+    window.scrollTo(0, 0)
+  }
+
   onSubmit() {
     //var ele = $(e.target);
     //e.preventDefault()
@@ -60,7 +64,7 @@ export default class Business extends React.Component {
         email + 'is interested in Geia',
         email + 'has contacted us', (error, response) => {
           if ( error ) {
-              Bert.alert( error.reason, 'danger' );
+              //Bert.alert( error.reason, 'danger' );
           } else {
               Bert.alert( "Email sent!",'success' );
           }
