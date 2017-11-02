@@ -13,7 +13,8 @@ export default class Business extends React.Component {
     this.state = {
       email: "",
       emailCheck: true,
-    }
+      emailSubmit: true
+    };
     this.onSubmit = this.onSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -56,20 +57,30 @@ export default class Business extends React.Component {
     console.log("flagemail:", flagemail);
 
     if(!flagemail) {
-      console.log("good email");
+      this.setState({emailSubmit: false});
+      
       Meteor.call(
         'sendEmail',
         'hello@geia.nz',
         email,
-        email + 'is interested in Geia',
-        email + 'has contacted us', (error, response) => {
+        email + ' is interested in Geia',
+        email + ' has contacted us from the business page', (error, response) => {
           if ( error ) {
+
               //Bert.alert( error.reason, 'danger' );
           } else {
-              Bert.alert( "Email sent!",'success' );
+              Bert.alert( "Thank&apos;s we&apos;ll be in touch",'success' );
           }
         }
-      );
+      ); 
+      
+      /*Meteor.call(
+        'sendEmail',
+        'zhaji077@gmail.com',
+        email,
+        'Hello from sendGrid',
+        'This is a test email for sendGrid 04:31'
+      )*/
     }else{
       console.log("invalid email");
     }
@@ -119,25 +130,31 @@ export default class Business extends React.Component {
 
               <div className='businessEmailContainer' >
                 <input
-                  style={{width:'230px', height:'20px', borderRadius:'6px'}}
+                  style={{width:'230px', height:'30px', borderRadius:'6px', paddingLeft: '10px'}}
                   type='text'
                   className='businessInput'
                   onChange={this.handleChange}
-                  placeholder="  Your email"
+                  placeholder="Your email"
                 />
+              <div className='businessSubmit' onClick={this.onSubmit} style={{fontSize: GLOBAL.FONT.SMALL,
+                  borderColor: 'white', borderStyle: 'solid'}}>
+                <p>Submit</p>
+                </div>
               <div style={{paddingLeft:'20px'}}>
+                {/*
               <button className='businessEmailButton'
                 style={{ backgroundColor:'#88c040', color:'white', borderColor: 'white'}}
                 onClick={this.onSubmit} >
                 Submit
               </button>
+              */}
             </div>
 
               {this.state.emailCheck? null : <span style={{color:'red'}} className = "businessEmailCheck">Invalid email!</span> }
 
             </div>
 
-          <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Thank&apos;s we&apos;ll be in touch.</p>
+          {this.state.emailSubmit? null : <p style={{fontSize: GLOBAL.FONT.MEDIUM, color: 'white', margin: 'auto'}}>Thank&apos;s we&apos;ll be in touch.</p>}
         </div>
         </div>
       </div>

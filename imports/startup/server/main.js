@@ -10,12 +10,13 @@ import { Qr } from '../../api/Leaderboard/qr.js';
 
 console.log("Starting server...");
 
+import '../../api/Leaderboard/user.js'
 import './roles.js';
 import './publications.js';
 
 
 if (Meteor.isServer) {
-    
+
     /** start of qr **/
     if(Qr.find().count() < 1){
         Qr.insert({

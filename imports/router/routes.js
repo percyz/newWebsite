@@ -11,6 +11,9 @@ import ContactUs from '../ui/components/contactUs/contactUs.jsx';
 import TermsConditions from '../ui/components/termsConditions/termsConditions.jsx';
 import Download from '../ui/components/download/download.jsx';
 
+/** ResetPassword page **/
+import ResetPassword from '../ui/components/forgotPw/forgot.jsx';
+
 
 /** Admin pages **/
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
@@ -78,6 +81,14 @@ FlowRouter.route('/about', {
   action(){
     mount(MainLayout, {
       content: (<AboutUs />)
+    })
+  }
+});
+
+FlowRouter.route('/resetPassword', {
+  action() {
+    mount(MainLayout, {
+      content: (<ResetPassword />)
     })
   }
 });

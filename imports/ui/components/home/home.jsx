@@ -50,15 +50,17 @@ export default class Home extends React.Component {
 
             <div className='midHomeText'>
               <p style={{fontSize: GLOBAL.FONT.BIG}}>Pretty easy.</p>
-              <p style={{fontSize: GLOBAL.FONT.BIG}}>What&apos;s the catch you ask?</p>
-              <p style={{fontSize: GLOBAL.FONT.BIG}}>Well, you make the world a better place.</p>
-              <p style={{fontSize: GLOBAL.FONT.SMALL}}>And we think that&apos;s a pretty good catch.</p>
+              <p style={{fontSize: GLOBAL.FONT.BIG}}>What&apos;s the catch you ask?
+              <br /> Well, you make the world a better place. </p>
+              <p> And we think that&apos;s a pretty good catch.</p>
+
               <a href='/about' style={{textDecoration:'none'}}>
               <div className='homeLearnMore' style={{fontSize: GLOBAL.FONT.MEDIUM,
                   borderColor: GLOBAL.COLOR.GREEN, borderStyle: 'solid'}}>
                 <p>Learn More</p>
               </div>
               </a>
+              
               <p style={{fontSize: GLOBAL.FONT.BIG}}>Or</p>
             </div>
           </div>

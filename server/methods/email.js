@@ -1,20 +1,27 @@
 import { Meteor } from 'meteor/meteor';
+//import { Email } from 'meteor/email';
 
 //Email URL
+//sendGrid API key: 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
 
 Meteor.startup(function () {
-    //  smtp://USERNAME:PASSWORD@HOST:PORT
+    //smtp://USERNAME:PASSWORD@HOST:PORT
     //process.env.MAIL_URL = 'smtp://chuckrobbie202@gmail.com:qwerty12345678910@smtp.gmail.com:587';
     //"MAIL_URL": "smtp://YOURgMAILuSERNAME%40gmail.com:@smtp.gmail.com:587/"
-    process.env.MAIL_URL = 'smtp://hello@geia.nz:Gr33n1337:@smtp.gmail.com:587';
+    //rocess.env.MAIL_URL = 'smtps://hello@geia.nz:Gr33n1337:@smtp.gmail.com:465/';
+    //process.env.MAIL_URL = 'smtps://hello@geia.nz:Gr33n1337:@smtp.gmail.com:465/';
+    //process.env.MAIL_URL = 'smtp://zhaji077%40gmail.com:mcqlwzj0301g:@smtp.gmail.com:587/';
+    process.env.MAIL_URL = 'smtp://apikey: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@smtp.sendgrid.net:587';
+    //MAIL_URL = 'smtp://hello@geia.nz:Gr33n1337:@smtp.gmail.com:587/'; 
     Accounts.emailTemplates.siteName = "Geia";
-    Accounts.emailTemplates.from = "Geia <admin@Geia.com>";
-
+    Accounts.emailTemplates.from = "Geia <hello@geia.nz>";
+ 
 Accounts.emailTemplates.verifyEmail = {
   subject() {
     return "Verify Your Email Address";
   },
   text( user, url ) {
+    //console.log('url is :',url)
     var newurl = url.slice(30);
     newurl = "https://www.geia.nz" + newurl;
     console.log("orig url:", url);
@@ -27,7 +34,7 @@ Accounts.emailTemplates.verifyEmail = {
     return emailBody;
   }
 };
-
+ 
 // Configures "reset password account" email link
 Accounts.emailTemplates.resetPassword.text = function (user, url) {
     var token = url.substring(url.lastIndexOf('/') + 1, url.length);
@@ -37,7 +44,7 @@ Accounts.emailTemplates.resetPassword.text = function (user, url) {
     newUrl = geiaUrl + newUrl;
     //console.log("newUrl is :", newUrl);
     var str = 'Hello,\n';
-    str += 'To reset your password, please click follow link...\n';
+    str += 'To reset your password, please click the following link \n';
     str += newUrl;
     str += "\nThanks, from team at Geia";
     //console.log("str is :", str);
@@ -52,12 +59,14 @@ Accounts.emailTemplates.resetPassword.text = function (user, url) {
 
 // In your server code: define a method that the client can call
 Meteor.methods({
-    sendEmail: function (to, from, subject, text) {
-      console.log("#############",typeof to,typeof from,typeof subject,typeof text)
+   /*  
+    sendEmail: function (to, from, subject, text) { 
+      console.log("server--sendEmail methods: ",typeof to,typeof from,typeof subject,typeof text);
         check([to, from, subject, text], [String]);
         // Let other method calls from the same client start running,
         // without waiting for the email sending to complete.
         this.unblock();
+          
         Email.send({
             to: to,
             from: from,
@@ -65,9 +74,22 @@ Meteor.methods({
             text: text
         });
     },
+  */
+    sendEmail(to, from, subject, text) {
+        check([to, from, subject, text], [String]);
+        this.unblock();
+        Email.send({ to, from, subject, text });
+    },
 
     //reset password
+    /*rspw: function (userId, oldpassword, newpassword) {
+      var user = Meteor.user()
+      console.log('rspw user is :',user)
+        check([userId, oldpassword, newpassword], [String]);
+        Accounts.setPassword(userId, newpassword);
+    },*/
     rspw: function (userId, email) {
+        console.log('id is :',userId, " email is :", email)
         check([userId, email], [String]);
         Accounts.sendResetPasswordEmail(userId, email);
     },

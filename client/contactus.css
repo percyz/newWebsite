@@ -21,3 +21,9 @@
   display: flex;
   margin-top: 3px;
 }
+
+@media(max-width: 400px){
+  .contactTop p {
+    text-align: center;
+  }
+}

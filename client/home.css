@@ -63,6 +63,7 @@
   text-align: center;
 }
 
+
 .midHomeText p {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -106,7 +107,7 @@
   transition: all .2s ease-in;
   cursor: pointer;
   width: 250px;
-  margin: 40px auto 40px auto;
+  margin: 25px auto 25px auto;
 }
 
 .homeLearnMore:hover {
@@ -117,7 +118,9 @@
 
 .homeLearnMore p {
   margin: auto;
+  color: black;
 }
+
 
 .botHome {
   display: flex;
@@ -143,4 +146,27 @@
 .appIconsBottom {
   height: 60px;
   max-width: 100%;
+}
+
+@media(max-width: 500px){
+  .midHomeContainer, .businessEmailContainer {
+    flex-direction: column;
+  }
+
+  .homeAppStore , .homeAppStoreBottom{
+    flex-direction: column;
+  }
+
+  .homeAppStore a, .homeAppStoreBottom a {
+    margin: auto
+  }
+
+  .homeText, .businessBot p {
+    text-align: center
+  }
+
+  .businessSubmit {
+    margin: auto;
+    margin-top: 20px;
+  }
 }

@@ -34,3 +34,32 @@
 .businessEmailCheck {
   padding-left: 20px;
 }
+
+.businessSubmit {
+  display: flex;
+  border-radius: 5px;
+  height: 30px;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  cursor: pointer;
+  width: 150px;
+  margin: 40px auto 40px 20px;
+}
+
+.businessSubmit:hover {
+  background: #88c040;
+  border-color: white!important;
+  color: white;
+}
+
+.businessSubmit:active {
+  background: white;
+  border-color: white!important;
+  color: black;
+}
+
+.businessSubmit p {
+  margin: auto;
+}

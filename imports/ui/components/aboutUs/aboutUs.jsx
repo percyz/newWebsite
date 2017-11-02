@@ -43,9 +43,9 @@ export default class AboutUs extends React.Component {
                 <div className='aboutParagraph'>
                 <p style={{fontSize: GLOBAL.FONT.BIG}}>How it works</p>
                 <p style={{fontSize: GLOBAL.FONT.MEDIUM}}>For the Business:</p>
-                <li style={{fontSize: GLOBAL.FONT.SMALL}}>Consent is given to Geia to access the business’s monthly power bill statements</li>
+                <li style={{fontSize: GLOBAL.FONT.SMALL}}>Consent is given to Geia to access the business&apos;s monthly power bill statements</li>
                 <li style={{fontSize: GLOBAL.FONT.SMALL}}>Business agrees to becoming a Geia Reward Partner</li>
-                <li style={{fontSize: GLOBAL.FONT.SMALL}}>Business receives and displays their unique QR code for customers to sca</li>
+                <li style={{fontSize: GLOBAL.FONT.SMALL}}>Business receives and displays their unique QR code for customers to scan</li>
                 <li style={{fontSize: GLOBAL.FONT.SMALL}}>Business can choose to receive help on improving energy efficiency</li>
                 <p style={{fontSize: GLOBAL.FONT.MEDIUM}}>For the Customer:</p>
                 <li style={{fontSize: GLOBAL.FONT.SMALL}}>Customer downloads the Geia Rewards App from the App Store or Google Play</li>
