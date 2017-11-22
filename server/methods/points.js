@@ -107,16 +107,16 @@ Meteor.methods({
                   }
                   var allWinners = firstWinner + rest;
                   console.log("rest is :", allWinners);
-                  /*Email.send({
-                      to: "team@geia.nz",
-                      from: "team@geia.nz",
+                  Email.send({
+                      to: "hello@geia.nz",
+                      from: "hello@geia.nz",
                       subject: "Monthly winners!",
                       text: allWinners
-                  });*/
+                  });
               }
         }
 
-        console.log('executing2')
+        /*console.log('executing2')
         var firstWinner = "The first winner is : " + winnersEmailArray[0] + " " + winnersNameArray[0] + "\n";
         //console.log(firstWinner);
         //console.log(winnersEmailArray);
@@ -126,7 +126,7 @@ Meteor.methods({
             rest += winnersEmailArray[g] + " " + winnersNameArray[g] + "\n";
         }
         var allWinners = firstWinner + rest;
-        console.log("rest is :", allWinners);
+        console.log("rest is :", allWinners);*/
 
 
             

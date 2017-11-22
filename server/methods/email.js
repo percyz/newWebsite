@@ -10,7 +10,6 @@ Meteor.startup(function () {
     //"MAIL_URL": "smtp://YOURgMAILuSERNAME%40gmail.com:@smtp.gmail.com:587/"
     //rocess.env.MAIL_URL = 'smtps://hello@geia.nz:Gr33n1337:@smtp.gmail.com:465/';
     //process.env.MAIL_URL = 'smtps://hello@geia.nz:Gr33n1337:@smtp.gmail.com:465/';
-    //process.env.MAIL_URL = 'smtp://zhaji077%40gmail.com:mcqlwzj0301g:@smtp.gmail.com:587/';
     process.env.MAIL_URL = 'smtp://apikey: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@smtp.sendgrid.net:587';
     //MAIL_URL = 'smtp://hello@geia.nz:Gr33n1337:@smtp.gmail.com:587/'; 
     Accounts.emailTemplates.siteName = "Geia";
